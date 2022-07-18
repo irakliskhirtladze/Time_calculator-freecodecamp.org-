@@ -41,21 +41,21 @@ def add_time(start, duration, startday=None):
 
     if startday!=None and sumhours<24:
         finday=startday.lower().title()
-        new_time=print(f'{finhours}:{finmins} {finampm}, {finday}')
+        new_time=f'{finhours}:{finmins} {finampm}, {finday}'
     if startday!=None and 24<=sumhours<48:
         weekday=startday.lower().title()
         finday=weekdays[(weekdays.index(weekday)+1)%7]
-        new_time=print(f'{finhours}:{finmins} {finampm}, {finday} (next day)')
+        new_time=f'{finhours}:{finmins} {finampm}, {finday} (next day)'
     if startday!=None and sumhours>=48:
         weekday=startday.lower().title()
         finday=weekdays[(weekdays.index(weekday)+durdays+1)%7]
-        new_time=print(f'{finhours}:{finmins} {finampm}, {finday} ({durdays+1} days later)')
+        new_time=f'{finhours}:{finmins} {finampm}, {finday} ({durdays+1} days later)'
     
     if startday==None and sumhours<24:
-        new_time=print(f'{finhours}:{finmins} {finampm}')
+        new_time=f'{finhours}:{finmins} {finampm}'
     if startday==None and 24<=sumhours<48:
-        new_time=print(f'{finhours}:{finmins} {finampm} (next day)')
+        new_time=f'{finhours}:{finmins} {finampm} (next day)'
     if startday==None and sumhours>=48:
-        new_time=print(f'{finhours}:{finmins} {finampm} ({durdays+1} days later)')
+        new_time=f'{finhours}:{finmins} {finampm} ({durdays+1} days later)'
 
     return new_time
